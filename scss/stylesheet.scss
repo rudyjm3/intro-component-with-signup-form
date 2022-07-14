@@ -10,18 +10,6 @@ body{
    min-height: 100vh;
 }
 
-section{
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: center;
-   width: 300px;
-   border-radius: 5px;
-   text-align: center;
-   background-color: rgba(0,0,255,0.3); /* blue with opacity */
-   padding: 20px;
-   margin-bottom: 35px;
-}
 form{
    display: flex;
    flex-wrap: wrap;
