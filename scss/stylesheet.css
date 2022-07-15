@@ -79,12 +79,21 @@ select {
 }
 :root {
   --Red: hsl(0, 100%, 74%);
+  --Light-Red: hsl(0, 53%, 74%);
   --Green: hsl(154, 59%, 51%);
+  --Light-Green: #78e2b4;
+  --Filter-Light-Green: #6dcca2;
+  --Dark-Green: #34b87e;
   --Blue: hsl(248, 32%, 49%);
   --Dark-Blue: hsl(249, 10%, 26%);
   --Grayish-Blue: hsl(246, 25%, 77%);
   font-family: "Poppins", sans-serif;
   font-size: 16px;
+}
+:root div,
+:root form,
+:root main {
+  border: 1px solid blue;
 }
 
 body {
@@ -92,37 +101,46 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: var(--Red);
 }
 
-#main-container {
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/bg-intro-desktop.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#overlay #main-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  width: 70%;
+  width: 75%;
 }
-#main-container .left-container {
+#overlay #main-container .left-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  text-align: left;
   color: white;
   width: 50%;
-  background: yellow;
 }
-#main-container .left-container h1 {
+#overlay #main-container .left-container h1 {
   line-height: 1.2;
   margin-bottom: 15px;
+  width: 85%;
 }
-#main-container .left-container p {
+#overlay #main-container .left-container p {
   text-align: left;
 }
-#main-container .right-container {
+#overlay #main-container .right-container {
   width: 50%;
-  background: red;
 }
-#main-container .right-container .offer {
+#overlay #main-container .right-container .offer {
   border-radius: 10px;
   background-color: var(--Blue);
   text-align: center;
@@ -130,15 +148,16 @@ body {
   margin-bottom: 25px;
   filter: drop-shadow(0px 10px 0px rgba(0, 0, 0, 0.33));
 }
-#main-container .right-container .offer p {
+#overlay #main-container .right-container .offer p {
   color: white;
   font-size: 14px;
   font-weight: 600;
 }
-#main-container .right-container .offer p .offer-amount {
+#overlay #main-container .right-container .offer p .offer-amount {
   color: var(--Grayish-Blue);
+  font-weight: 400;
 }
-#main-container .right-container form {
+#overlay #main-container .right-container form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -149,14 +168,50 @@ body {
   padding: 35px;
   filter: drop-shadow(0px 10px 0px rgba(0, 0, 0, 0.33));
 }
-#main-container .right-container form input {
+#overlay #main-container .right-container form input {
   width: 100%;
   border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 25px;
+  padding: 12px 25px;
+  margin-bottom: 20px;
+  outline: none;
+  border: 0.6px solid var(--Grayish-Blue);
 }
-#main-container .right-container form input:nth-child(5) {
-  margin: 35px 0;
-  filter: drop-shadow(0px 5px 0px rgba(0, 0, 0, 0.33));
+#overlay #main-container .right-container form ::-moz-placeholder {
+  font-weight: 600;
+}
+#overlay #main-container .right-container form :-ms-input-placeholder {
+  font-weight: 600;
+}
+#overlay #main-container .right-container form ::placeholder {
+  font-weight: 600;
+}
+#overlay #main-container .right-container form input:nth-child(5) {
+  margin-bottom: 15px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid var(--Dark-Green);
+  background-color: var(--Green);
+  filter: drop-shadow(0px 5px 0px var(--Dark-Green));
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#overlay #main-container .right-container form input:nth-child(5):hover {
+  background-color: var(--Light-Green);
+  border-color: var(--Light-Green);
+  filter: drop-shadow(0px 5px 0px var(--Filter-Light-Green));
+}
+#overlay #main-container .right-container form .terms-txt {
+  font-size: 10px;
+  color: var(--Grayish-Blue);
+  font-weight: 600;
+}
+#overlay #main-container .right-container form .terms-txt a {
+  color: var(--Red);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+#overlay #main-container .right-container form .terms-txt a:hover {
+  color: var(--Light-Red);
+  font-weight: 700;
 }/*# sourceMappingURL=stylesheet.css.map */

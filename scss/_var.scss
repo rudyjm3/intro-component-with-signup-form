@@ -2,6 +2,11 @@
 
 
 :root {
+   div,
+   form,
+   main{
+      border: 1px solid blue;
+   }
    //## Layout
 
    //The designs were created to the following widths:
@@ -14,7 +19,11 @@
 
    //## Primary Color
    --Red: hsl(0, 100%, 74%);
+   --Light-Red: hsl(0, 53%, 74%);
    --Green: hsl(154, 59%, 51%);
+   --Light-Green: #78e2b4;
+   --Filter-Light-Green: #6dcca2;
+   --Dark-Green: #34b87e;
 
    //## Accent Colors
    --Blue: hsl(248, 32%, 49%);
