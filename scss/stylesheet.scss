@@ -71,12 +71,14 @@ body{
             width: 100%;
             padding: 35px;
             filter: drop-shadow(0px 10px 0px rgb(0, 0, 0, 0.33));
-
+            .input-control{
+               width: 100%;
+            }
             input{
                width: 100%;
                border-radius: 5px;
                padding: 12px 25px;
-               margin-bottom: 20px;
+               // margin-bottom: 20px;
                outline: none;
                border: 0.6px solid var(--Grayish-Blue);
             }
@@ -97,10 +99,59 @@ body{
                transition: all 0.3s ease-in-out; 
             }
             input:nth-child(5):hover{
-                  background-color: var(--Light-Green);
-                  border-color: var(--Light-Green);
-                  filter: drop-shadow(0px 5px 0px var(--Filter-Light-Green));
+               background-color: var(--Light-Green);
+               border-color: var(--Light-Green);
+               filter: drop-shadow(0px 5px 0px var(--Filter-Light-Green));
+            }
+            //## ERROR STYLING ##
+            .error-border{
+               border: 1px solid var(--Red);
+            }
+            .error-icon{
+               position: relative;
+               top: -55px;
+               right: -383px;
+               background-image: url('/images/icon-error.svg');
+               background-position: center;
+               background-repeat: no-repeat;
+               background-size: contain;
+               width: 24px;
+               height: 24px;
+               display: block;
+               transform: scale(0);
+               transition: all 0.3s ease-in-out;
+            }
+            .error-txt{
+               position: relative;
+               top: 5px;
+               text-align: right;
+               color: var(--Red);
+               font-weight: 600;
+               font-size: 12px;
+               display: none;
+            }
+            .error-shake{
+               animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+               transform: translate3d(0, 0, 0);
+            }
+            @keyframes shake {
+               10%, 90% {
+                 transform: translate3d(-1px, 0, 0);
                }
+               
+               20%, 80% {
+                 transform: translate3d(2px, 0, 0);
+               }
+             
+               30%, 50%, 70% {
+                 transform: translate3d(-4px, 0, 0);
+               }
+             
+               40%, 60% {
+                 transform: translate3d(4px, 0, 0);
+               }
+             }
+            //## END ERROR STYLING ##
             .terms-txt{
                font-size: 10px;
                color: var(--Grayish-Blue);
