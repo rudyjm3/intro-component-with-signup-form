@@ -17,7 +17,7 @@ trialForm.addEventListener('submit', e => {
 const setError = (element, message) => {
    const inputControl = element.parentElement;
    const errorTxt = inputControl.querySelector('.error-txt');
-   const errorIcon = inputControl.querySelector('.error-icon')
+   const errorIcon = inputControl.querySelector('.error-icon');
    console.log(errorIcon);
 
    errorTxt.innerText = message;
@@ -28,6 +28,18 @@ const setError = (element, message) => {
    inputControl.classList.remove('success-border');
 }
 
+const setSuccess = element => {
+   const inputControl = element.parentElement;
+   const errorTxt = inputControl.querySelector('.error-txt');
+   const errorIcon = inputControl.querySelector('.error-icon');
+
+   errorTxt.innerText = "";
+   errorTxt.style.cssText = 'display: block;';
+   errorIcon.style.cssText = 'transform: scale(0);';
+   errorIcon.classList.remove('error-shake');
+   inputControl.classList.remove('error-border');
+   inputControl.classList.add('success-border');
+}
 
 
 const validateInputs = () => {
@@ -38,7 +50,9 @@ const validateInputs = () => {
 
    if (firstNameValue === '') {
       setError(firstName, 'First Name is required');
-   } 
+   } else {
+      setSuccess(firstName);
+   }
 
 };
 
