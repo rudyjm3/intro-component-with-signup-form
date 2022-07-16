@@ -3,9 +3,6 @@ const firstName = document.getElementById('fName-input');
 const lastName = document.getElementById('lName-input');
 const email = document.getElementById('email-input');
 const pwd = document.getElementById('pwd-input');
-// const errorTxt = document.getElementsByClassName('error-txt');
-// const errorIcon = document.getElementsByClassName('error-icon');
-// const inputControl = document.getElementsByClassName('input-control');
 
 //Listen for a submit from the form. Element?? arrow function
 trialForm.addEventListener('submit', e => {
@@ -26,7 +23,7 @@ const setError = (element, message) => {
    errorIcon.classList.add('error-shake');
    inputControl.classList.add('error-border');
    inputControl.classList.remove('success-border');
-}
+};
 
 const setSuccess = element => {
    const inputControl = element.parentElement;
@@ -39,6 +36,11 @@ const setSuccess = element => {
    errorIcon.classList.remove('error-shake');
    inputControl.classList.remove('error-border');
    inputControl.classList.add('success-border');
+};
+
+const isValidEmail = email => {
+   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 
 
@@ -54,6 +56,28 @@ const validateInputs = () => {
       setSuccess(firstName);
    }
 
+   if (lastNameValue === '') {
+      setError(lastName, 'Last Name is required');
+   } else {
+      setSuccess(lastName);
+   }
+
+   if (emailValue === '') {
+      setError(email, 'Email is required');
+   } else if (!isValidEmail(emailValue)) {
+      setError(email, 'Provide a valid email address');
+   } else {
+      setSuccess(email);
+   }
+
+   if (pwdValue === '') {
+      setError(pwd, 'Password is required');
+   } else if (pwdValue.length < 8) {
+      setError(pwd, 'Password must be at least 8 characters.')
+   } else {
+      setSuccess(pwd);
+   }
+
 };
 
 
@@ -63,7 +87,4 @@ const validateInputs = () => {
 
 
 
-const isValidEmail = email => {
-   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
+
