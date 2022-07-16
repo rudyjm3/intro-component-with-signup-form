@@ -71,22 +71,56 @@ body{
             width: 100%;
             padding: 35px;
             filter: drop-shadow(0px 10px 0px rgb(0, 0, 0, 0.33));
+
             .input-control{
+               position: relative;
                width: 100%;
+               
+               input{
+                  width: 100%;
+                  border-radius: 5px;
+                  padding: 12px 25px;
+                  margin-bottom: 25px;
+                  outline: none;
+                  border: 0.6px solid var(--Grayish-Blue);
+               }
+               ::placeholder{
+                  font-weight: 600;
+               }
+               //## ERROR STYLING ##
+               .error-icon{
+                  position: absolute;
+                  top: 12px;
+                  right: 26px;
+                  width: 100%;
+                  background-image: url('/images/icon-error.svg');
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  width: 24px;
+                  height: 24px;
+                  // display: block;
+                  transform: scale(0);
+                  transition: all 0.3s ease-in-out;
+               }
+               .error-txt{
+                  position: absolute;
+                  top: 49px;
+                  width: 100%;
+                  text-align: right;
+                  color: var(--Red);
+                  font-weight: 600;
+                  font-size: 12px;
+                  display: none;
+               }
             }
-            input{
+            
+            // Submit Button
+            input:nth-child(5){
                width: 100%;
                border-radius: 5px;
                padding: 12px 25px;
-               // margin-bottom: 20px;
                outline: none;
-               border: 0.6px solid var(--Grayish-Blue);
-            }
-            ::placeholder{
-               font-weight: 600;
-            }
-            // Submit Button
-            input:nth-child(5){
                margin-bottom: 15px;
                color: white;
                text-transform: uppercase;
@@ -103,34 +137,8 @@ body{
                border-color: var(--Light-Green);
                filter: drop-shadow(0px 5px 0px var(--Filter-Light-Green));
             }
-            //## ERROR STYLING ##
-            .error-border{
-               border: 1px solid var(--Red);
-            }
-            .error-icon{
-               position: relative;
-               top: -55px;
-               right: -383px;
-               background-image: url('/images/icon-error.svg');
-               background-position: center;
-               background-repeat: no-repeat;
-               background-size: contain;
-               width: 24px;
-               height: 24px;
-               display: block;
-               transform: scale(0);
-               transition: all 0.3s ease-in-out;
-            }
-            .error-txt{
-               position: relative;
-               top: 5px;
-               text-align: right;
-               color: var(--Red);
-               font-weight: 600;
-               font-size: 12px;
-               // display: none;
-            }
-            .error-shake{
+            
+            .error-shake {
                animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
                transform: translate3d(0, 0, 0);
             }
@@ -151,7 +159,16 @@ body{
                  transform: translate3d(4px, 0, 0);
                }
              }
+             .error-border input{
+               // border: 1px solid var(--Red);
+               border-color: var(--Red);
+            }
+            .success-border input{
+               // border: 1px solid var(--Green);
+               border-color: var(--Green);
+            }
             //## END ERROR STYLING ##
+
             .terms-txt{
                font-size: 10px;
                color: var(--Grayish-Blue);
