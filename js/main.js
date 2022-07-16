@@ -1,46 +1,55 @@
 const trialForm = document.getElementById('trial-form');
-const errorTxt = document.getElementsByClassName('error-txt');
-const errorIcon = document.getElementsByClassName('error-icon');
-const inputControl = document.getElementsByClassName('input-control');
-console.log(errorTxt);
-console.log(errorIcon);
+const firstName = document.getElementById('fName-input');
+const lastName = document.getElementById('lName-input');
+const email = document.getElementById('email-input');
+const pwd = document.getElementById('pwd-input');
+// const errorTxt = document.getElementsByClassName('error-txt');
+// const errorIcon = document.getElementsByClassName('error-icon');
+// const inputControl = document.getElementsByClassName('input-control');
 
 //Listen for a submit from the form. Element?? arrow function
-trialForm.addEventListener('submit', () => {
-   // e.preventDefault();
+trialForm.addEventListener('submit', e => {
+   e.preventDefault();
    //Run function below
-   validateInput();
+   validateInputs();
 });
 
 const setError = (element, message) => {
    const inputControl = element.parentElement;
-   console.log(inputControl);
-   errorTxt[0].innerText = message;
-   console.log(message);
-   console.log(errorTxt);
-   errorTxt[0].style.cssText = "display:block;";
-   errorIcon[0].style.cssText = 'transform: scale(1);';
-   errorIcon[0].classList.add('error-shake');
-   inputControl.classList.remove('success');
+   const errorTxt = inputControl.querySelector('.error-txt');
+   const errorIcon = inputControl.querySelector('.error-icon')
+   console.log(errorIcon);
+
+   errorTxt.innerText = message;
+   errorTxt.style.cssText = 'display: block;';
+   errorIcon.style.cssText = 'transform: scale(1);';
+   errorIcon.classList.add('error-shake');
+   inputControl.classList.add('error-border');
+   inputControl.classList.remove('success-border');
 }
+
+
+
+const validateInputs = () => {
+   const firstNameValue = firstName.value.trim();
+   const lastNameValue = lastName.value.trim();
+   const emailValue = email.value.trim();
+   const pwdValue = pwd.value.trim();
+
+   if (firstNameValue === '') {
+      setError(firstName, 'First Name is required');
+   } 
+
+};
+
+
+
+
+
+
 
 
 const isValidEmail = email => {
    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-
-// Check all inputs for a value
-function validateInput() {
-
-   if(document.trialform.fName.value == "") {
-      trialForm.fName.focus();//Focus puts the blinking cursor in the input with the problem
-         alert ("First name needs to be filled out");
-      setError(document.trialform.fName, 'First name is required');
-      //    errorTxt.style.display = "block";
-      //    errorIcon.style.cssText = 'transform: scale(1);';
-      // errorIcon.classList.add('error-shake');
-
-   }
-   return true ;
-};
