@@ -40,7 +40,6 @@ body{
       @media #{$media-mobile} {
          flex-direction: column;
          justify-content: space-around;
-         // height: 80%;
       }
       .left-container{
          display: flex;
