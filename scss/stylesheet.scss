@@ -1,12 +1,21 @@
 @import "_reset.scss";
 @import "_var.scss";
 
+//The designs were created to the following widths:
+// $media-desktop: "only screen and (max-width : 1440px)";
+$media-tablet: "only screen and (max-width : 750px)";
+$media-mobile: "only screen and (max-width : 570px)";
+// $media-mobile-sm: "only screen and (max-width : 375px)";
+
 body{
    display: flex;
    justify-content: center;
    align-items: center;
    height: 100vh;
    background-color: var(--Red);
+   @media #{$media-mobile} {
+      padding: 20px 0;
+   }
 }
 #overlay{
    width: 100%;
@@ -20,29 +29,57 @@ body{
    align-items: center;
    #main-container{
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       gap: 15px;
-      // width: 1440px;
       width: 75%;
 
+      @media #{$media-tablet} {
+         width: 90%;
+      }
+      @media #{$media-mobile} {
+         flex-direction: column;
+         justify-content: space-around;
+         // height: 80%;
+      }
       .left-container{
          display: flex;
          flex-direction: column;
          text-align: left;
          color: white;
          width: 50%;
+
+         @media #{$media-tablet} {
+            width: 40%;
+         }
+         @media #{$media-mobile} {
+            width: 100%;
+         }
          h1{
             line-height: 1.2;
             margin-bottom: 15px;
             width: 85%;
+            @media #{$media-mobile} {
+               width: 100%;
+               text-align: center;
+            }
          }
          p{
             text-align: left;
+            @media #{$media-mobile} {
+               text-align: center;
+            }
          }
       }
       .right-container{
          width: 50%;
+
+         @media #{$media-tablet} {
+            width: 60%;
+         }
+         @media #{$media-mobile} {
+            width: 100%;
+         }
 
          .offer{
             border-radius: 10px;
@@ -51,6 +88,14 @@ body{
             padding: 20px 15px;
             margin-bottom: 25px;
             filter: drop-shadow(0px 10px 0px rgb(0, 0, 0, 0.33));
+
+            @media #{$media-mobile} {
+               padding: 20px 35px;
+            }
+            @media #{$media-mobile} {
+               width: 100%;
+               padding: 20px 40px;
+            }
             p{
                color: white;
                font-size: 14px;
@@ -71,6 +116,10 @@ body{
             width: 100%;
             padding: 35px;
             filter: drop-shadow(0px 10px 0px rgb(0, 0, 0, 0.33));
+
+            @media #{$media-mobile} {
+               padding: 25px;
+            }
 
             .input-control{
                position: relative;
@@ -99,7 +148,6 @@ body{
                   background-size: contain;
                   width: 24px;
                   height: 24px;
-                  // display: block;
                   transform: scale(0);
                   transition: all 0.3s ease-in-out;
                }
@@ -114,10 +162,10 @@ body{
                   display: none;
                }
             }
-            
             // Submit Button
-            input:nth-child(5){
+            input[type='submit'] {
                width: 100%;
+               justify-content: center;
                border-radius: 5px;
                padding: 12px 25px;
                outline: none;
@@ -127,16 +175,16 @@ body{
                font-weight: 600;
                border: 1px solid var(--Dark-Green);
                background-color: var(--Green);
-               // filter: drop-shadow(0px 5px 0px rgb(0, 0, 0, 0.33));
                filter: drop-shadow(0px 5px 0px var(--Dark-Green));
                cursor: pointer;
                transition: all 0.3s ease-in-out; 
             }
-            input:nth-child(5):hover{
+
+            input[type='submit']:hover {
                background-color: var(--Light-Green);
                border-color: var(--Light-Green);
                filter: drop-shadow(0px 5px 0px var(--Filter-Light-Green));
-            }
+            }            
             
             .error-shake {
                animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -160,11 +208,9 @@ body{
                }
              }
              .error-border input{
-               // border: 1px solid var(--Red);
                border-color: var(--Red);
             }
             .success-border input{
-               // border: 1px solid var(--Green);
                border-color: var(--Green);
             }
             //## END ERROR STYLING ##
@@ -173,13 +219,16 @@ body{
                font-size: 10px;
                color: var(--Grayish-Blue);
                font-weight: 600;
+               @media #{$media-mobile} {
+                  text-align: center;
+               }
                a{
                   color: var(--Red);
                   text-decoration: none;
                   transition: all 0.3s ease-in-out;
                }
                a:hover{
-                  color: var(--Light-Red);
+                  color: var(--Light-Green);
                   font-weight: 700;
                }
             }

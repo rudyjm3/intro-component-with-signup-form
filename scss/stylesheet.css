@@ -98,6 +98,11 @@ body {
   height: 100vh;
   background-color: var(--Red);
 }
+@media only screen and (max-width : 570px) {
+  body {
+    padding: 20px 0;
+  }
+}
 
 #overlay {
   width: 100%;
@@ -112,10 +117,21 @@ body {
 }
 #overlay #main-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 15px;
   width: 75%;
+}
+@media only screen and (max-width : 750px) {
+  #overlay #main-container {
+    width: 90%;
+  }
+}
+@media only screen and (max-width : 570px) {
+  #overlay #main-container {
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 #overlay #main-container .left-container {
   display: flex;
@@ -124,16 +140,47 @@ body {
   color: white;
   width: 50%;
 }
+@media only screen and (max-width : 750px) {
+  #overlay #main-container .left-container {
+    width: 40%;
+  }
+}
+@media only screen and (max-width : 570px) {
+  #overlay #main-container .left-container {
+    width: 100%;
+  }
+}
 #overlay #main-container .left-container h1 {
   line-height: 1.2;
   margin-bottom: 15px;
   width: 85%;
 }
+@media only screen and (max-width : 570px) {
+  #overlay #main-container .left-container h1 {
+    width: 100%;
+    text-align: center;
+  }
+}
 #overlay #main-container .left-container p {
   text-align: left;
 }
+@media only screen and (max-width : 570px) {
+  #overlay #main-container .left-container p {
+    text-align: center;
+  }
+}
 #overlay #main-container .right-container {
   width: 50%;
+}
+@media only screen and (max-width : 750px) {
+  #overlay #main-container .right-container {
+    width: 60%;
+  }
+}
+@media only screen and (max-width : 570px) {
+  #overlay #main-container .right-container {
+    width: 100%;
+  }
 }
 #overlay #main-container .right-container .offer {
   border-radius: 10px;
@@ -142,6 +189,17 @@ body {
   padding: 20px 15px;
   margin-bottom: 25px;
   filter: drop-shadow(0px 10px 0px rgba(0, 0, 0, 0.33));
+}
+@media only screen and (max-width : 570px) {
+  #overlay #main-container .right-container .offer {
+    padding: 20px 35px;
+  }
+}
+@media only screen and (max-width : 570px) {
+  #overlay #main-container .right-container .offer {
+    width: 100%;
+    padding: 20px 40px;
+  }
 }
 #overlay #main-container .right-container .offer p {
   color: white;
@@ -162,6 +220,11 @@ body {
   width: 100%;
   padding: 35px;
   filter: drop-shadow(0px 10px 0px rgba(0, 0, 0, 0.33));
+}
+@media only screen and (max-width : 570px) {
+  #overlay #main-container .right-container form {
+    padding: 25px;
+  }
 }
 #overlay #main-container .right-container form .input-control {
   position: relative;
@@ -208,8 +271,9 @@ body {
   font-size: 12px;
   display: none;
 }
-#overlay #main-container .right-container form input:nth-child(5) {
+#overlay #main-container .right-container form input[type=submit] {
   width: 100%;
+  justify-content: center;
   border-radius: 5px;
   padding: 12px 25px;
   outline: none;
@@ -223,7 +287,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-#overlay #main-container .right-container form input:nth-child(5):hover {
+#overlay #main-container .right-container form input[type=submit]:hover {
   background-color: var(--Light-Green);
   border-color: var(--Light-Green);
   filter: drop-shadow(0px 5px 0px var(--Filter-Light-Green));
@@ -272,12 +336,17 @@ body {
   color: var(--Grayish-Blue);
   font-weight: 600;
 }
+@media only screen and (max-width : 570px) {
+  #overlay #main-container .right-container form .terms-txt {
+    text-align: center;
+  }
+}
 #overlay #main-container .right-container form .terms-txt a {
   color: var(--Red);
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
 #overlay #main-container .right-container form .terms-txt a:hover {
-  color: var(--Light-Red);
+  color: var(--Light-Green);
   font-weight: 700;
 }/*# sourceMappingURL=stylesheet.css.map */

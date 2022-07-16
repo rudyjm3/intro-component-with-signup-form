@@ -15,7 +15,7 @@ const setError = (element, message) => {
    const inputControl = element.parentElement;
    const errorTxt = inputControl.querySelector('.error-txt');
    const errorIcon = inputControl.querySelector('.error-icon');
-   console.log(errorIcon);
+   //console.log(errorIcon);
 
    errorTxt.innerText = message;
    errorTxt.style.cssText = 'display: block;';
