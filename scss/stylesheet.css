@@ -139,7 +139,7 @@ body {
   flex-direction: column;
   text-align: left;
   color: white;
-  width: 50%;
+  width: 45%;
 }
 @media only screen and (max-width : 750px) {
   #overlay #main-container .left-container {
@@ -152,14 +152,17 @@ body {
   }
 }
 #overlay #main-container .left-container h1 {
+  font-size: 2.5rem;
   line-height: 1.2;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   width: 85%;
 }
 @media only screen and (max-width : 570px) {
   #overlay #main-container .left-container h1 {
     width: 100%;
+    font-size: 2rem;
     text-align: center;
+    margin-top: 15px;
   }
 }
 #overlay #main-container .left-container p {
@@ -171,7 +174,7 @@ body {
   }
 }
 #overlay #main-container .right-container {
-  width: 50%;
+  width: 55%;
 }
 @media only screen and (max-width : 750px) {
   #overlay #main-container .right-container {
@@ -187,9 +190,9 @@ body {
   border-radius: 10px;
   background-color: var(--Blue);
   text-align: center;
-  padding: 20px 15px;
+  padding: 30px 15px;
   margin-bottom: 25px;
-  filter: drop-shadow(0px 10px 0px rgba(0, 0, 0, 0.33));
+  filter: drop-shadow(0px 10px 0px rgba(0, 0, 0, 0.15));
 }
 @media only screen and (max-width : 570px) {
   #overlay #main-container .right-container .offer {
@@ -220,7 +223,7 @@ body {
   border-radius: 10px;
   width: 100%;
   padding: 35px;
-  filter: drop-shadow(0px 10px 0px rgba(0, 0, 0, 0.33));
+  filter: drop-shadow(0px 10px 0px rgba(0, 0, 0, 0.15));
 }
 @media only screen and (max-width : 570px) {
   #overlay #main-container .right-container form {
@@ -235,7 +238,7 @@ body {
   width: 100%;
   border-radius: 5px;
   padding: 12px 25px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   outline: none;
   border: 0.6px solid var(--Grayish-Blue);
 }
@@ -264,11 +267,12 @@ body {
 }
 #overlay #main-container .right-container form .input-control .error-txt {
   position: absolute;
-  top: 49px;
+  top: 55px;
   width: 100%;
   text-align: right;
   color: var(--Red);
-  font-weight: 600;
+  font-style: italic;
+  font-weight: 500;
   font-size: 12px;
   display: none;
 }
@@ -278,10 +282,10 @@ body {
   border-radius: 5px;
   padding: 12px 25px;
   outline: none;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: white;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid var(--Dark-Green);
   background-color: var(--Green);
   filter: drop-shadow(0px 5px 0px var(--Dark-Green));
@@ -328,12 +332,14 @@ body {
 }
 #overlay #main-container .right-container form .error-border input {
   border-color: var(--Red);
+  border-width: 2px;
 }
 #overlay #main-container .right-container form .success-border input {
   border-color: var(--Green);
+  border-width: 2px;
 }
 #overlay #main-container .right-container form .terms-txt {
-  font-size: 10px;
+  font-size: 9px;
   color: var(--Grayish-Blue);
   font-weight: 600;
 }
@@ -345,9 +351,9 @@ body {
 #overlay #main-container .right-container form .terms-txt a {
   color: var(--Red);
   text-decoration: none;
+  font-weight: 700;
   transition: all 0.3s ease-in-out;
 }
 #overlay #main-container .right-container form .terms-txt a:hover {
   color: var(--Light-Green);
-  font-weight: 700;
 }/*# sourceMappingURL=stylesheet.css.map */
