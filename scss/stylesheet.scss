@@ -229,11 +229,16 @@ body{
             //## END ERROR STYLING ##
 
             .terms-txt{
-               font-size: 9px;
+               font-size: 10px;
                color: var(--Grayish-Blue);
                font-weight: 600;
-               @media #{$media-mobile} {
+
+               @media #{$media-tablet} {
                   text-align: center;
+                  width: 70%;
+               }
+               @media #{$media-mobile} {
+                  width: 65%
                }
                a{
                   color: var(--Red);

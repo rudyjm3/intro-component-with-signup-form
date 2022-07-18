@@ -347,13 +347,19 @@ body {
   border-width: 2px;
 }
 #overlay #main-container .right-container form .terms-txt {
-  font-size: 9px;
+  font-size: 10px;
   color: var(--Grayish-Blue);
   font-weight: 600;
 }
-@media only screen and (max-width : 570px) {
+@media only screen and (max-width : 750px) {
   #overlay #main-container .right-container form .terms-txt {
     text-align: center;
+    width: 70%;
+  }
+}
+@media only screen and (max-width : 570px) {
+  #overlay #main-container .right-container form .terms-txt {
+    width: 65%;
   }
 }
 #overlay #main-container .right-container form .terms-txt a {
